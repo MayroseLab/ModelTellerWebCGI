@@ -1,0 +1,12 @@
+total 56
+-rwxr-xr-x 1 bioseq bioseq   707 Jul  3  2018 directory_creator.py
+-rwxr-xr-x 1 bioseq bioseq  1171 Jul  3  2018 email_sender.py
+-rw-rw-r-- 1 bioseq bioseq  6563 Aug 15 16:20 example_msa.txt
+-rw------- 1 bioseq bioseq  5163 Aug 16 09:29 html_editor.py
+-rwxr-xr-x 1 bioseq bioseq 12132 Aug 16 15:14 modelteller_cgi.py
+-rwxr-xr-x 1 bioseq bioseq   992 Aug 15 15:33 MODELTELLER_CONSTANTS.py
+-rw-r--r-- 1 bioseq bioseq  3325 Aug 16 14:22 output.html
+-rw-rw-r-- 1 bioseq bioseq     0 Jan 29 10:29 previous_permissions.txt
+drwxr-xr-x 2 bioseq bioseq  4096 Aug 16 14:22 __pycache__
+-rw-rw-r-- 1 bioseq bioseq    21 Aug 16 14:22 res.txt
+-rwxr-xr-x 1 bioseq bioseq  4092 Aug 15 10:54 sandbox_cgi.py
