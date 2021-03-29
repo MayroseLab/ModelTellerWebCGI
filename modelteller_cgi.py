@@ -173,6 +173,7 @@ def run_cgi():
         exit()
 
     # uncomment to send the admin a notification email EVERY time there's a new request
+
     send_email(smtp_server=CONSTS.SMTP_SERVER, sender=CONSTS.ADMIN_EMAIL,
                receiver='orenavram@gmail.com', subject=f'ModelTeller - A new job has been submitted: {run_number}',
                content=f"{os.path.join(CONSTS.WEBSERVER_URL, 'results', run_number, 'cgi_debug.txt')}\n{os.path.join(CONSTS.WEBSERVER_URL, 'results', run_number, 'output.html')}")
@@ -243,6 +244,8 @@ def run_cgi():
 
 
         parameters = f'-m {msa_path} -j {run_number} -p {running_mode_code} -f {features_contributions}'
+        if job_title == 'daily test': 
+            parameters += ' --daily_test'
 
         cmds_file = os.path.join(wd, 'qsub.cmds')
         write_cmds_file(cmds_file, run_number, parameters)
@@ -272,11 +275,12 @@ def run_cgi():
                                     f'Meanwhile, you can track the progress of your job at:\n{os.path.join(CONSTS.WEBSERVER_URL, "results", run_number, "output.html")}\n\n'
 
             # Send the user a notification email for their submission
-            send_email(smtp_server=CONSTS.SMTP_SERVER,
-                       sender=CONSTS.ADMIN_EMAIL,
-                       receiver=f'{user_email}',
-                       subject=f'{CONSTS.WEBSERVER_NAME} - Your job has been submitted!{" (Job name: "+str(job_title) if job_title else ""})',
-                       content=notification_content)
+            if job_title != 'daily test':
+                send_email(smtp_server=CONSTS.SMTP_SERVER,
+                           sender=CONSTS.ADMIN_EMAIL,
+                           receiver=f'{user_email}',
+                           subject=f'{CONSTS.WEBSERVER_NAME} - Your job has been submitted!{" (Job name: "+str(job_title) if job_title else ""})',
+                           content=notification_content)
 
         write_to_debug_file(cgi_debug_path, f'\n\n{"#"*50}\nCGI finished running!\n{"#"*50}\n')
 

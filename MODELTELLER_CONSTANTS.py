@@ -27,7 +27,8 @@ MODELTELLER_RESULTS_DIR = os.path.join(SERVERS_RESULTS_DIR, 'modelteller')
 MODELTELLER_LOGS_DIR = os.path.join(SERVERS_LOGS_DIR, 'modelteller')
 MODELTELLER_RESULTS_URL = os.path.join(WEBSERVER_URL, 'results')
 MODELTELLER_HTML_DIR = '/data/www/html/modelteller'
-MODELTELLER_EXEC = '/groups/itay_mayrose/shiranabad/MsMl/mt_online_sklearn/'
+#MODELTELLER_EXEC = '/groups/itay_mayrose/shiranabad/MsMl/mt_online_sklearn/'
+MODELTELLER_EXEC = '/bioseq/modelteller/modelteller_scripts/'
 
 MAIN_SCRIPT = os.path.join(MODELTELLER_EXEC, 'main.py')
 
